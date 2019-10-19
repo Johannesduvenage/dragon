@@ -20,7 +20,7 @@ To get Gekko running you need to do the following:
 
 ## Installing nodejs
 
-Gekko requires [nodejs](https://nodejs.org/en/) to be installed. Go ahead and install this if it's not already (Gekko requires at least version 6). We advice to download the current LTS.
+Gekko requires [nodejs](https://nodejs.org/en/) to be installed. Go ahead and install this if it's not already (Gekko requires at least version 8.11.2). We advice to download the current LTS.
 
 ## Installing git
 
@@ -43,10 +43,13 @@ Once you have Gekko downloaded you need to install the dependencies, open your t
 
     npm install --only=production
 
-We also need to install Gekko Broker's dependencies, run:
+*NOTE: You may see a vulnerability warning from NPM, if you run npm audit with --force, Gekko will break. See [here](https://github.com/askmike/gekko/issues/2585#issuecomment-428450997).*
+
+You also need to install Gekko Broker's dependencies, run:
 
     cd exchange
     npm install --only=production
+    cd ..
 
 ## Starting Gekko
 

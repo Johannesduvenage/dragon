@@ -704,6 +704,20 @@ methods.sma = {
     }
 }
 
+methods.stddev = {
+    requires: ['optInTimePeriod'],
+    create: (params) => {
+        verifyParams('stddev', params);
+
+        return (data, callback) => execute(callback, {
+            indicator: tulind.indicators.stddev,
+            inputs: [data.close],
+            options: [params.optInTimePeriod],
+            results: ['result'],
+        });
+    }
+}
+
 methods.stoch = {
     requires: ['optInFastKPeriod', 'optInSlowKPeriod', 'optInSlowDPeriod'],
     create: (params) => {
@@ -714,6 +728,20 @@ methods.stoch = {
             inputs: [data.high, data.low, data.close],
             options: [params.optInFastKPeriod, params.optInSlowKPeriod, params.optInSlowDPeriod],
             results: ['stochK', 'stochD'],
+        });
+    }
+}
+
+methods.stochrsi = {
+    requires: ['optInPeriod'],
+    create: (params) => {
+        verifyParams('stochrsi', params);
+
+        return (data, callback) => execute(callback, {
+            indicator: tulind.indicators.stochrsi,
+            inputs: [data.close],
+            options: [params.optInPeriod],
+            results: ['stochRsi'],
         });
     }
 }
