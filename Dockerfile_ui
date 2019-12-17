@@ -40,12 +40,7 @@ RUN npm install mathjs && \
     npm install irc && \
     npm install emailjs && \
     npm install prompt-lite && \
-    npm install zero-fill && \
-    npm install lodash.ismatch && \
-    npm install talib-promise && \
-    npm install sync-request && \
-    npm cache clean --force
-
+    npm install zero-fill
 
 # Bundle app source
 COPY . /usr/src/app
@@ -54,10 +49,5 @@ EXPOSE 3000
 RUN chmod +x /usr/src/app/docker-entrypoint.sh
 ENTRYPOINT ["/usr/src/app/docker-entrypoint.sh"]
 
-  #  CMD ["--config", "config.js", "--ui"]
-
-# node gekko --config config.js
-
-  CMD ["--config", "config.js"]
-# node gekko --config config.js
+CMD ["--config", "config.js", "--ui"]
 
