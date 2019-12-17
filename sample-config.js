@@ -90,8 +90,8 @@ config.performanceAnalyzer = {
 // watched by `config.watch`.
 config.trader = {
   enabled: true,
-  key: 'YUNh9FLBx7k2gjqlUeFzwc5TpOuTpAqbLoQ2L4u1S2nVBphf6ZxMzvRR7UnF52rE',
-  secret: 'OzrMYv1tBI0HCZrun5z89cNSrvyAgGktVr20JWPbUPzKD2za1UlINpPls1koeA54',
+  key: '',
+  secret: '',
   username: '', // your username, only required for specific exchanges.
   passphrase: '', // GDAX, requires a passphrase.
 }
